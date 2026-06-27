@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://roi-gamba-portfolio.onrender.com/sitemap.xml
