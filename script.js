@@ -17,15 +17,16 @@ function goToSection(index) {
   if (isAnimating) return;
 
   isAnimating = true;
-  const prev  = currentIndex;
+
+  /* Reset the incoming section's scroll to the top before it slides in */
+  sections[index].scrollTop = 0;
+
   currentIndex = index;
 
-  /* Update section classes */
   sections.forEach((sec, i) => {
     sec.classList.remove('is-active', 'is-above');
     if (i < index)  sec.classList.add('is-above');
     if (i === index) sec.classList.add('is-active');
-    /* Sections above current index go above; below go off-screen below (no class = default) */
   });
 
   updateUI(index);
@@ -55,19 +56,35 @@ window.addEventListener('wheel', (e) => {
 
 /* ─── TOUCH ─────────────────────────────────────────────── */
 let touchStartY   = 0;
+let touchStartX   = 0;
 let touchCooldown = false;
 
 window.addEventListener('touchstart', (e) => {
   touchStartY = e.touches[0].clientY;
+  touchStartX = e.touches[0].clientX;
 }, { passive: true });
 
 window.addEventListener('touchend', (e) => {
   if (isAnimating || touchCooldown) return;
-  const delta = touchStartY - e.changedTouches[0].clientY;
-  if (Math.abs(delta) < 40) return;
+
+  const deltaY = touchStartY - e.changedTouches[0].clientY;
+  const deltaX = touchStartX - e.changedTouches[0].clientX;
+
+  /* Ignore horizontal swipes */
+  if (Math.abs(deltaX) > Math.abs(deltaY)) return;
+  if (Math.abs(deltaY) < 40) return;
+
+  /* Respect inner scroll: only snap sections when at the scroll boundary */
+  const sec        = sections[currentIndex];
+  const atTop      = sec.scrollTop <= 2;
+  const atBottom   = sec.scrollTop + sec.clientHeight >= sec.scrollHeight - 2;
+
+  if (deltaY > 0 && !atBottom) return; /* swiping down but more content below */
+  if (deltaY < 0 && !atTop)   return; /* swiping up but more content above */
+
   touchCooldown = true;
   setTimeout(() => { touchCooldown = false; }, 900);
-  goToSection(delta > 0 ? currentIndex + 1 : currentIndex - 1);
+  goToSection(deltaY > 0 ? currentIndex + 1 : currentIndex - 1);
 }, { passive: true });
 
 /* ─── KEYBOARD ──────────────────────────────────────────── */
