@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roi Gamba | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navigation Dots -->
+  <nav class="nav-dots" aria-label="Section navigation">
+    <button class="nav-dot active" data-index="0" aria-label="About Me"></button>
+    <button class="nav-dot" data-index="1" aria-label="Work History"></button>
+    <button class="nav-dot" data-index="2" aria-label="Projects"></button>
+    <button class="nav-dot" data-index="3" aria-label="Contact"></button>
+  </nav>
+
+  <!-- Section Label -->
+  <div class="section-label">
+    <span class="section-label__number">01</span>
+    <span class="section-label__text">About Me</span>
+  </div>
+
+  <!-- Scroll Hint -->
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-hint__line"></div>
+  </div>
+
+  <!-- ─── SECTION 1: ABOUT ME ─────────────────────────── -->
+  <section class="section section--about" id="section-0" data-index="0">
+    <div class="section__inner">
+
+      <div class="about__text">
+        <p class="about__eyebrow">Hi! I'm</p>
+        <h1 class="about__name">Roi Gamba</h1>
+        <p class="about__role">Software Development Engineer in Test<br /><span class="about__role-accent">& Full-Stack Developer</span></p>
+        <p class="about__bio">I build robust systems, automate the hard stuff, and ship software that doesn't break in production. Passionate about quality, clean code, and agentic AI workflows.</p>
+
+        <div class="about__links">
+          <a href="https://linkedin.com/in/roi-gamba" target="_blank" rel="noopener" class="about__link">
+            <svg class="about__link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/roi-gamba" target="_blank" rel="noopener" class="about__link">
+            <svg class="about__link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="mailto:gambaroimark@gmail.com" class="about__link about__link--email">
+            <svg class="about__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            gambaroimark@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="about__photo-wrap">
+        <div class="about__photo-frame">
+          <div class="about__photo-placeholder">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="30" r="16" fill="var(--accent)" opacity="0.4"/>
+              <ellipse cx="40" cy="62" rx="24" ry="14" fill="var(--accent)" opacity="0.3"/>
+            </svg>
+            <span><img src="assets/photo.png" alt="Roi Gamba" /></span>
+          </div>
+          <!-- Replace the div above with: <img src="assets/photo.jpg" alt="Roi Gamba" /> -->
+        </div>
+        <div class="about__photo-glow"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── SECTION 2: WORK HISTORY & SKILLS ─────────────── -->
+  <section class="section section--work" id="section-1" data-index="1">
+    <div class="section__inner section__inner--work">
+
+      <div class="work__col work__col--history">
+        <h2 class="section__title">Work <span class="accent">History</span></h2>
+
+        <div class="timeline">
+
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__period">May 2025 – Present</span>
+              <h3 class="timeline__role">Software Development Engineer in Test</h3>
+              <p class="timeline__company">Comrise <span class="timeline__deploy">→ Willis Towers Watson</span></p>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__period">June 2024 – May 2025</span>
+              <h3 class="timeline__role">Software Automation Engineer II</h3>
+              <p class="timeline__company">TrustArc, Inc.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__period">May 2022 – May 2024</span>
+              <h3 class="timeline__role">Software Developer II · QA Automation Engineer</h3>
+              <p class="timeline__company">Bizmates Philippines, Inc.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__period">August 2017 – May 2022</span>
+              <h3 class="timeline__role">Software Engineer · Lead Engineer</h3>
+              <p class="timeline__company">Atlantis System's Technologies Filipinas, Inc.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="work__col work__col--skills">
+        <h2 class="section__title">Skills <span class="accent">&amp; Tools</span></h2>
+
+        <div class="skills">
+
+          <div class="skills__group">
+            <h4 class="skills__label">Programming &amp; Scripting</h4>
+            <div class="skills__tags">
+              <span class="tag">Java</span><span class="tag">Python</span><span class="tag">C#</span>
+              <span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span>
+            </div>
+          </div>
+
+          <div class="skills__group">
+            <h4 class="skills__label">Databases</h4>
+            <div class="skills__tags">
+              <span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">T-SQL</span>
+            </div>
+          </div>
+
+          <div class="skills__group">
+            <h4 class="skills__label">DevOps &amp; CI/CD</h4>
+            <div class="skills__tags">
+              <span class="tag">AWS CodeBuild</span><span class="tag">Azure Pipelines</span>
+              <span class="tag">Jenkins</span><span class="tag">Docker</span>
+              <span class="tag">Git</span>
+            </div>
+          </div>
+
+          <div class="skills__group">
+            <h4 class="skills__label">Frameworks</h4>
+            <div class="skills__tags">
+              <span class="tag">Node.js</span><span class="tag">Vue.js</span><span class="tag">Laravel</span>
+              <span class="tag">Maven</span><span class="tag">Tailwind</span><span class="tag">Bootstrap</span>
+            </div>
+          </div>
+
+          <div class="skills__group">
+            <h4 class="skills__label">Cloud</h4>
+            <div class="skills__tags">
+              <span class="tag">AWS</span><span class="tag">Azure</span>
+              <span class="tag">Digital Ocean</span><span class="tag">Google Cloud</span>
+            </div>
+          </div>
+
+          <div class="skills__group">
+            <h4 class="skills__label">Testing</h4>
+            <div class="skills__tags">
+              <span class="tag">End-to-End</span><span class="tag">Regression Testing</span><span class="tag">Load Testing</span>
+              <span class="tag">API Testing</span><span class="tag">Unit Testing</span><span class="tag">Smoke Testing</span>
+            </div>
+          </div>
+
+          <div class="skills__group">
+            <h4 class="skills__label">Automated Testing</h4>
+            <div class="skills__tags">
+              <span class="tag tag--accent">Playwright</span><span class="tag tag--accent">Selenium</span>
+            </div>
+          </div>
+
+          <div class="skills__group">
+            <h4 class="skills__label">AI</h4>
+            <div class="skills__tags">
+              <span class="tag tag--accent">Agentic Workflows</span>
+              <span class="tag tag--accent">Github Copilot</span>
+              <span class="tag tag--accent">Claude Code</span>
+              <span class="tag tag--accent">Azdo MCP Servers</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── SECTION 3: PROJECTS ──────────────────────────── -->
+  <section class="section section--projects" id="section-2" data-index="2">
+    <div class="section__inner section__inner--projects">
+
+      <h2 class="section__title section__title--center">My <span class="accent">Projects</span></h2>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="work">From Work</button>
+        <button class="tab" data-tab="me">From Me</button>
+        <button class="tab" data-tab="us">From Us</button>
+      </div>
+
+      <div class="tab-panels">
+
+        <!-- FROM WORK -->
+        <div class="tab-panel active" id="tab-work">
+          <p class="tab-panel__desc">Projects built during my professional career — enterprise systems, automation frameworks, and QA pipelines.</p>
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-card__thumb project-card__thumb--placeholder"></div>
+              <div class="project-card__info">
+                <h4 class="project-card__title">Project Title</h4>
+                <p class="project-card__desc">Brief description of the project, tech used, and impact.</p>
+                <a href="#" class="project-card__link">View Project →</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card__thumb project-card__thumb--placeholder"></div>
+              <div class="project-card__info">
+                <h4 class="project-card__title">Project Title</h4>
+                <p class="project-card__desc">Brief description of the project, tech used, and impact.</p>
+                <a href="#" class="project-card__link">View Project →</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card__thumb project-card__thumb--placeholder"></div>
+              <div class="project-card__info">
+                <h4 class="project-card__title">Project Title</h4>
+                <p class="project-card__desc">Brief description of the project, tech used, and impact.</p>
+                <a href="#" class="project-card__link">View Project →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FROM ME -->
+        <div class="tab-panel" id="tab-me">
+          <p class="tab-panel__desc">Freelance work and personal client projects — bringing ideas to life independently.</p>
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-card__thumb project-card__thumb--placeholder"></div>
+              <div class="project-card__info">
+                <h4 class="project-card__title">Freelance Project</h4>
+                <p class="project-card__desc">Brief description of the project, tech used, and impact.</p>
+                <a href="#" class="project-card__link">View Project →</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-card__thumb project-card__thumb--placeholder"></div>
+              <div class="project-card__info">
+                <h4 class="project-card__title">Freelance Project</h4>
+                <p class="project-card__desc">Brief description of the project, tech used, and impact.</p>
+                <a href="#" class="project-card__link">View Project →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FROM US -->
+        <div class="tab-panel" id="tab-us">
+          <p class="tab-panel__desc">Passion projects built with the power of Agentic Engineering and collaborative AI workflows.</p>
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-card__thumb project-card__thumb--placeholder"></div>
+              <div class="project-card__info">
+                <h4 class="project-card__title">Agentic Project</h4>
+                <p class="project-card__desc">Brief description of the project, tech used, and impact.</p>
+                <a href="#" class="project-card__link">View Project →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 4: CONTACT ───────────────────────────── -->
+  <section class="section section--contact" id="section-3" data-index="3">
+    <div class="section__inner section__inner--contact">
+
+      <div class="contact__header">
+        <h2 class="section__title">Let's <span class="accent">Connect</span></h2>
+        <p class="contact__subtitle">Have a project in mind or just want to say hello? Drop me a message.</p>
+      </div>
+
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="contact-form__row">
+          <div class="contact-form__field">
+            <label for="name" class="contact-form__label">Name</label>
+            <input type="text" id="name" name="name" class="contact-form__input" placeholder="Your name" required />
+          </div>
+          <div class="contact-form__field">
+            <label for="email" class="contact-form__label">Email</label>
+            <input type="email" id="email" name="email" class="contact-form__input" placeholder="your@email.com" required />
+          </div>
+        </div>
+        <div class="contact-form__field">
+          <label for="subject" class="contact-form__label">Subject</label>
+          <input type="text" id="subject" name="subject" class="contact-form__input" placeholder="What's this about?" />
+        </div>
+        <div class="contact-form__field">
+          <label for="message" class="contact-form__label">Message</label>
+          <textarea id="message" name="message" class="contact-form__textarea" placeholder="Tell me about your project..." rows="5" required></textarea>
+        </div>
+        <button type="submit" class="contact-form__submit">
+          <span class="contact-form__submit-text">Send Message</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="contact-form__submit-icon" aria-hidden="true">
+            <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 19-7z"/>
+          </svg>
+        </button>
+        <div class="contact-form__status" id="form-status" aria-live="polite"></div>
+      </form>
+
+      <div class="contact__footer">
+        <p>Or reach me directly at <a href="mailto:gambaroimark@gmail.com" class="contact__email">gambaroimark@gmail.com</a></p>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.45/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
