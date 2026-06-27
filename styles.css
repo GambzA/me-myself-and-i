@@ -663,6 +663,36 @@ input, textarea { font-family: inherit; }
   font-weight: 600;
   margin-bottom: 0.4rem;
   color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.investor-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fde68a;
+  background: rgba(253, 230, 138, 0.08);
+  border: 1px solid rgba(253, 230, 138, 0.2);
+  box-shadow:
+    0 0 6px rgba(253, 230, 138, 0.15),
+    0 0 14px rgba(253, 230, 138, 0.06);
+  text-shadow: 0 0 8px rgba(253, 230, 138, 0.5);
+}
+
+.investor-tag__star {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 3px rgba(253, 230, 138, 0.7));
 }
 
 .project-card__desc {
