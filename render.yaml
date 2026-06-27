@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: roi-gamba-portfolio
+    env: static
+    staticPublishPath: .
