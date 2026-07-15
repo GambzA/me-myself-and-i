@@ -1,0 +1,137 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-bg: #08080f;
+  --color-bg-alt: #0d0d1a;
+  --color-card: #12121f;
+  --color-border: #1e1e30;
+  --color-accent: #8b5cf6;
+  --color-accent-2: #06b6d4;
+  --color-text: #f1f0ff;
+  --color-text-muted: #6b7280;
+  --color-text-dim: #4b5563;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --animate-scroll-line: scroll-line 1.8s ease-in-out infinite;
+}
+
+@keyframes scroll-line {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 1;
+  }
+  49% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    opacity: 0;
+  }
+}
+
+:root {
+  --accent-glow: rgba(139, 92, 246, 0.25);
+  --accent-2-glow: rgba(6, 182, 212, 0.2);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* ─── Fixed-stack scroll-snap sections ──────────────────── */
+.section {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  overflow-y: auto;
+  transform: translateY(100%);
+  transition: transform 1.1s cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: transform;
+}
+
+.section.is-above {
+  transform: translateY(-100%);
+}
+
+.section.is-active {
+  transform: translateY(0);
+}
+
+.section-inner > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.is-active .section-inner > *:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.35s;
+}
+.section.is-active .section-inner > *:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+.section.is-active .section-inner > *:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+.section.is-active .section-inner > *:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.7s;
+}
+
+.section.is-above .section-inner > *,
+.section:not(.is-active):not(.is-above) .section-inner > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* ─── Project card slider (mobile + >3 card grids) ──────── */
+.project-slider-track {
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}

@@ -1,5 +1,35 @@
+databases:
+  - name: roi-gamba-portfolio-db
+    plan: free
+
 services:
   - type: web
+    name: roi-gamba-portfolio-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: DATABASE_URL
+        fromDatabase:
+          name: roi-gamba-portfolio-db
+          property: connectionString
+      - key: JWT_SECRET_KEY
+        generateValue: true
+
+  - type: web
     name: roi-gamba-portfolio
-    env: static
-    staticPublishPath: .
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://roi-gamba-portfolio-api.onrender.com
+    routes:
+      - source: /*
+        destination: /index.html
+        type: rewrite
