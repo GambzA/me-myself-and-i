@@ -11,8 +11,13 @@ Do not guess APIs, versions, flags, commit SHAs, or package names. Verify by rea
 
 Single-page static site built with Tailwind CSS v3.
 `index.html` is the only page. Styles are authored in `src/input.css` and compiled to
-`dist/styles.css` via `npm run build` (or `npm run watch`); `dist/` and `node_modules/`
-are gitignored and rebuilt on deploy. Design tokens live in `tailwind.config.js`.
+`dist/styles.css` via `npm run build` (or `npm run watch`). Design tokens live in
+`tailwind.config.js`.
+
+`dist/styles.css` is committed, not gitignored. Render's static service does not
+reliably run the blueprint's `buildCommand`, and a missing `dist/styles.css` serves the
+site as unstyled HTML. Always run `npm run build` and commit the result alongside any
+change to `src/input.css`, `tailwind.config.js`, or the classes used in `index.html`.
 
 Scripts in `assets/js/`:
 - `motion.js` — reveal/parallax/count-up engine driven by `data-reveal`, `data-parallax`,

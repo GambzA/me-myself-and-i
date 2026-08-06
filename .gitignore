@@ -1,8 +1,11 @@
 # Node
 node_modules/
 
-# Tailwind build output
-dist/
+# NOTE: dist/styles.css is deliberately committed, matching advanced-modern.
+# Render's static service does not reliably run `npm run build`, and a missing
+# dist/styles.css takes the whole site down to unstyled HTML. Committing it means
+# the deploy never depends on the build succeeding. Rebuild and commit it
+# whenever src/input.css, tailwind.config.js, or classes in index.html change.
 
 # OS
 .DS_Store
