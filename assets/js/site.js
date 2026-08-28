@@ -1,47 +1,11 @@
 /**
- * Page behaviour specific to this portfolio: the Projects tab switcher, the
- * copy-to-clipboard email button, and the nav scroll-spy.
+ * Page behaviour specific to this portfolio: the copy-to-clipboard email
+ * button and the nav scroll-spy.
  *
  * Motion (reveals, parallax, counters) lives in motion.js and is shared,
  * unmodified, with the design it was ported from.
  */
 (() => {
-  /* ————————————————— Projects tabs ————————————————— */
-  const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
-
-  const selectTab = (tab) => {
-    tabs.forEach((t) => {
-      const selected = t === tab;
-      t.setAttribute('aria-selected', String(selected));
-      t.setAttribute('tabindex', selected ? '0' : '-1');
-      const panel = document.getElementById(t.getAttribute('aria-controls'));
-      if (panel) panel.hidden = !selected;
-    });
-
-    // A panel that was hidden never intersected, so its cards are still sitting
-    // at opacity 0. Reveal them now that the panel has a layout box; the
-    // stagger --d that motion.js already wrote gives them their cascade.
-    const panel = document.getElementById(tab.getAttribute('aria-controls'));
-    if (panel) {
-      requestAnimationFrame(() => {
-        panel.querySelectorAll('[data-reveal]').forEach((el) => el.classList.add('is-in'));
-      });
-    }
-  };
-
-  tabs.forEach((tab, i) => {
-    tab.addEventListener('click', () => selectTab(tab));
-    // Roving focus, per the tabs pattern.
-    tab.addEventListener('keydown', (e) => {
-      const dir = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-      if (!dir) return;
-      e.preventDefault();
-      const next = tabs[(i + dir + tabs.length) % tabs.length];
-      next.focus();
-      selectTab(next);
-    });
-  });
-
   /* ————————————————— copy email ————————————————— */
   const copyBtn = document.getElementById('copy-email');
   if (copyBtn) {

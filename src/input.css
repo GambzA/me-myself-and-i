@@ -124,6 +124,13 @@
   }
   .card-on-ink:hover { @apply border-accent-400/60 bg-white/[0.07]; }
 
+  /* Project cards: thumbnail bleeds to the card edge, tighter frame around it. */
+  .card-project { @apply p-5; }
+  .card-media {
+    @apply relative overflow-hidden bg-surface aspect-[4/3] -mt-5 -mx-5 mb-5;
+    width: calc(100% + 2.5rem);
+  }
+
   .card-num {
     @apply font-mono font-medium text-[13px] tracking-[0.1em] text-accent-400;
   }
@@ -140,24 +147,16 @@
   /* The skills worth pulling forward out of a long list. */
   .tag-on-ink-accent { @apply border border-accent-400/70 bg-accent-400/15 text-accent-300; }
 
-  /* — segmented tab control (Projects) — */
-  .tab {
-    @apply relative inline-flex items-center justify-center cursor-pointer
-      font-heading font-semibold text-[12px] tracking-[0.1em] uppercase
-      px-5 py-3 rounded border border-transparent text-muted bg-transparent;
-    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
-  }
-  .tab:hover { @apply text-accent; }
-  .tab[aria-selected='true'] {
-    @apply text-white bg-accent border-accent shadow-glow;
-  }
-
   /* — tool badge (agentic tools row) — */
   .tool-badge {
     @apply inline-flex items-center gap-2 rounded-full border border-divider bg-white
       px-3.5 py-1.5 text-[12px] font-medium text-muted;
   }
   .tool-badge img { @apply w-4 h-4 object-contain; }
+  /* Same pill, sitting on top of a project thumbnail. */
+  .tool-badge-float {
+    @apply absolute right-3 top-3 z-10 border-white/60 bg-white/90 shadow-sm backdrop-blur-sm text-text;
+  }
 
   /* — investor pill on a project title — */
   .investor-tag {
@@ -232,13 +231,6 @@
     -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 40%, #000 40%, transparent 100%);
     mask-image: radial-gradient(ellipse 75% 70% at 50% 40%, #000 40%, transparent 100%);
   }
-  .mask-fade-x {
-    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
-    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
-  }
-
-  .animate-marquee:hover { animation-play-state: paused; }
-
   /* Promotes parallax/reveal layers to their own compositor layer. */
   .will-animate { will-change: transform, opacity; }
 }

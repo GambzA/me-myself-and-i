@@ -63,10 +63,6 @@ module.exports = {
           from: { transform: 'rotate(360deg)' },
           to: { transform: 'rotate(0deg)' },
         },
-        marquee: {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(-50%)' },
-        },
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-12px)' },
@@ -81,7 +77,6 @@ module.exports = {
         'spin-slow': 'spin_slow 26s linear infinite',
         'spin-slower': 'spin_slow 48s linear infinite',
         'spin-reverse': 'spin_reverse 34s linear infinite',
-        marquee: 'marquee 38s linear infinite',
         float: 'float 7s ease-in-out infinite',
         'scroll-cue': 'scroll_cue 1.8s ease-out infinite',
       },
