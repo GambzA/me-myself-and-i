@@ -88,5 +88,5 @@
     }
   }
 
-  fetchGraphQLData()
+  // fetchGraphQLData()
 })();
