@@ -48,4 +48,45 @@
     );
     links.forEach((_, section) => spy.observe(section));
   }
+
+  async function fetchGraphQLData() {
+    /** Leetcode graphql request */
+    const leetCodeUrl = "https://leetcode.com/graphql"
+    const graphqlRequest = `{
+      matchedUser(username: "gambaroimark") {
+        username
+        submitStats: submitStatsGlobal {
+          acSubmissionNum {
+            difficulty
+            count
+            submissions
+          }
+        }
+      }
+    }`
+
+    try {
+      // 2. Make the POST request
+      const response = await fetch(leetCodeUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json', // Must be application/json
+        },
+        body: JSON.stringify({
+          query: graphqlRequest // Send the query wrapped inside an object
+        })
+      });
+
+      // 3. Parse and extract the JSON response
+      const result = await response.json();
+
+      // GraphQL always returns data wrapped inside a "data" object
+      console.log(result)
+      console.log(result.data.characters.results);
+    } catch (error) {
+      console.error('Error fetching GraphQL data:', error);
+    }
+  }
+
+  fetchGraphQLData()
 })();
